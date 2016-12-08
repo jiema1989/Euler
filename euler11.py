@@ -21,5 +21,46 @@ A=[[8, 2, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 8]
 
 
 print A
+print len(A)
 
 
+
+def rowPro(matrix):
+    output = 0;
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])-3):
+            prod = matrix[i][j]*matrix[i][j+1]*matrix[i][j+2]*matrix[i][j+3];
+            if prod > output:
+                output = prod;
+    return output
+
+def columnPro(matrix):
+    output = 0;
+    for i in xrange(len(matrix[0])):
+        for j in xrange(len(matrix)-3):
+            prod = matrix[j][i]*matrix[j+1][i]*matrix[j+2][i]*matrix[j+3][i];
+            if prod > output:
+                output = prod;
+    return output
+
+def leftToRight(matrix):
+    output = 0;
+    for i in xrange(len(matrix)-3):
+        for j in xrange(len(matrix[i])-3):
+            prod = matrix[i][j]*matrix[i+1][j+1]*matrix[i+2][j+2]*matrix[i+3][j+3];
+            if prod > output:
+                output = prod;
+    return output
+
+
+def rightToLeft(matrix):
+    output = 0;
+    for i in xrange(len(matrix[0])-3):
+        for j in xrange(len(matrix)-3):
+            prod = matrix[i][j]*matrix[i-1][j+1]*matrix[i-2][j+2]*matrix[i-3][j+3]
+            if prod > output:
+                output = prod;
+    return output
+
+data = [rowPro(A), columnPro(A), leftToRight(A), rightToLeft(A)]
+print max(data)
