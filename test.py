@@ -1,10 +1,15 @@
-# test.py #
+#test.py #
 
-a= [1,2,3]
-c = {1:2}
-b=[1]
 
-print c.keys()
-print type(c.keys())
-print len(c.keys())
-print 2 > c.keys()[0]
+
+
+a = set([1,2,3,4,5])
+
+b = set([i for i in range(5)])
+
+print b
+
+print sum(b)
+
+
+print 4207994 + 28123

@@ -9,7 +9,7 @@ def main(n):
         return False;
     else:
         root_n = math.ceil(math.sqrt(n))+1;
-        for i in xrange(3, int(root_n),2):
+        for i in range(3, int(root_n),2):
             if n%i == 0:
                 return False;
                 break;
